@@ -35,13 +35,18 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <a href="#home" className="flex items-center gap-2.5">
-          <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center shadow-xl shadow-primary/15">
-            <span className="text-white font-bold text-sm">I</span>
+        <a href="#home" className="flex items-center gap-3">
+          <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#111214] border border-white/10 shadow-xl shadow-black/20">
+            <img
+              src="/assets/integris-creative-logo-dark.png"
+              alt="Integris Creative"
+              className="h-8 w-8 object-contain"
+            />
           </div>
-          <span className="text-foreground font-semibold text-lg tracking-tight">
-            Integris<span className="text-primary"> Creative</span>
-          </span>
+          <div className="flex flex-col leading-tight">
+            <span className="text-sm font-semibold text-foreground tracking-tight">Integris Creative</span>
+            <span className="text-[11px] uppercase tracking-[0.32em] text-primary/80">Creative Studio</span>
+          </div>
         </a>
 
         <div className="hidden md:flex items-center gap-1">

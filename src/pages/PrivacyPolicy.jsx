@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import Footer from '../components/landing/Footer';
+import PoweredBy from '../components/landing/PoweredBy.jsx';
 
 export default function PrivacyPolicy() {
   return (
@@ -100,6 +101,7 @@ export default function PrivacyPolicy() {
           </div>
         </div>
       </motion.main>
+      <PoweredBy />
       <Footer />
     </div>
   );

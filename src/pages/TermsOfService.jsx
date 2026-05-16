@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import Footer from '../components/landing/Footer';
+import PoweredBy from '../components/landing/PoweredBy.jsx';
 
 export default function TermsOfService() {
   return (
@@ -107,6 +108,7 @@ export default function TermsOfService() {
           </div>
         </div>
       </motion.main>
+      <PoweredBy />
       <Footer />
     </div>
   );

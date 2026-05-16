@@ -8,6 +8,7 @@ import Process from "../components/landing/Process";
 import Portfolio from "../components/landing/Portfolio";
 import CoreValues from "../components/landing/CoreValues";
 import CallToAction from "../components/landing/CallToAction";
+import PoweredBy from "../components/landing/PoweredBy.jsx";
 import Footer from "../components/landing/Footer";
 
 export default function Home() {
@@ -22,6 +23,7 @@ export default function Home() {
       <Portfolio />
       <CoreValues />
       <CallToAction />
+      <PoweredBy />
       <Footer />
     </div>
   );
