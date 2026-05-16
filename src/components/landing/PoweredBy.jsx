@@ -12,7 +12,7 @@ export default function PoweredBy() {
       <div className="flex flex-col items-center gap-6 text-center sm:flex-row sm:items-center sm:justify-between">
         <div className="flex items-center gap-4 rounded-3xl bg-[#0E1114]/80 border border-white/10 px-4 py-3 shadow-sm shadow-primary/10">
           <img
-            src="/assets/integris-systems-logo.png"
+            src="/assets/integris-systems-logo.svg"
             alt="Integris Systems"
             className="h-10 w-10 object-contain"
           />
