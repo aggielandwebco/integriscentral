@@ -1,78 +1,75 @@
-import React, { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import React from "react";
+import { motion } from "framer-motion";
 import SectionWrapper from "./SectionWrapper";
-import SectionHeading from "./SectionHeading.jsx";
-import { Layers, Cpu, BarChart3, Globe } from "lucide-react";
+import SectionHeading from "./SectionHeading";
+import { Compass, Layers3, LineChart, MonitorSmartphone } from "lucide-react";
 
-const stats = [
-  { value: "4", label: "Integrated Platforms" },
-  { value: "50+", label: "Core Features" },
-  { value: "∞", label: "Scalability" },
-  { value: "24/7", label: "Cloud Infrastructure" },
-];
-
-const capabilities = [
-  { icon: Layers, title: "Modular Architecture", desc: "Build your tech stack from interconnected modules that grow with your business." },
-  { icon: Cpu, title: "AI-Powered Automation", desc: "Intelligent workflows that learn, adapt, and optimize your operations autonomously." },
-  { icon: BarChart3, title: "Unified Analytics", desc: "Real-time insights across every platform, all in one centralized dashboard." },
-  { icon: Globe, title: "Digital Presence", desc: "Manage your websites, branding, and online reputation from a single control center." },
+const pillars = [
+  {
+    icon: MonitorSmartphone,
+    title: "Modern Websites",
+    desc: "Responsive websites with crisp layouts, fast performance, and the credibility customers expect.",
+  },
+  {
+    icon: Layers3,
+    title: "Brand Systems",
+    desc: "Visual identity, messaging, and reusable design patterns that make every touchpoint feel aligned.",
+  },
+  {
+    icon: LineChart,
+    title: "Conversion Focus",
+    desc: "Clear pathways, strong calls to action, and intentional content structure built around business goals.",
+  },
+  {
+    icon: Compass,
+    title: "Digital Direction",
+    desc: "A strategic plan for how your business should look, communicate, and grow across the web.",
+  },
 ];
 
 export default function About() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-80px" });
-
   return (
     <SectionWrapper id="about">
-      <SectionHeading
-        tag="About Integris"
-        title="A Business Operating Ecosystem"
-        description="Integris is not just software — it's a centralized, modular operating ecosystem designed to unify every facet of how modern businesses run, scale, and grow."
-      />
+      <div className="grid items-start gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+        <SectionHeading
+          align="left"
+          tag="About"
+          title="A creative partner for businesses ready to look as capable as they are."
+          description="Integris Creative helps businesses modernize their digital presence through clean websites, strategic branding, and conversion-focused design. The work is polished, scalable, and built to support real growth, not just fill a template."
+        />
 
-      {/* Stats row */}
-      <div ref={ref} className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20">
-        {stats.map((stat, i) => (
-          <motion.div
-            key={stat.label}
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5, delay: i * 0.1 }}
-            className="text-center p-6 rounded-2xl border border-white/5 bg-[#161618]/40 backdrop-blur-sm"
-          >
-            <div className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-primary to-gold bg-clip-text text-transparent">
-              {stat.value}
-            </div>
-            <div className="mt-1 text-sm text-muted-foreground">{stat.label}</div>
-          </motion.div>
-        ))}
+        <div className="grid gap-4 sm:grid-cols-2">
+          {pillars.map((item, i) => (
+            <motion.div
+              key={item.title}
+              initial={{ opacity: 0, y: 24, rotate: i % 2 ? 1.5 : -1.5 }}
+              whileInView={{ opacity: 1, y: 0, rotate: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.6, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+              whileHover={{ y: -6, transition: { duration: 0.2 } }}
+              className="glass-panel group rounded-2xl p-6"
+            >
+              <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl border border-primary/20 bg-primary/10">
+                <item.icon className="h-5 w-5 text-primary" />
+              </div>
+              <h3 className="text-lg font-semibold text-foreground">{item.title}</h3>
+              <p className="mt-3 text-sm leading-7 text-muted-foreground">{item.desc}</p>
+            </motion.div>
+          ))}
+        </div>
       </div>
 
-      {/* Capability cards */}
-      <div className="grid md:grid-cols-2 gap-5">
-        {capabilities.map((item, i) => (
-          <motion.div
-            key={item.title}
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.4 + i * 0.1 }}
-            className="group p-6 rounded-2xl border border-white/5 bg-[#161618]/40 backdrop-blur-sm hover:border-primary/20 transition-all duration-300 hover:bg-[#161618]/60"
-          >
-            <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-              <item.icon className="w-5 h-5 text-primary" />
-            </div>
-            <h3 className="text-lg font-semibold text-foreground mb-2">{item.title}</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
-          </motion.div>
+      <div className="mt-14 grid gap-4 rounded-3xl border border-white/10 bg-white/[0.035] p-4 backdrop-blur sm:grid-cols-3">
+        {[
+          ["Nationwide mindset", "Built for brands that want a serious online presence."],
+          ["Ecosystem fit", "Part of the broader Integris approach to modern business infrastructure."],
+          ["Launch to support", "Designed, shipped, refined, and supported beyond handoff."],
+        ].map(([title, detail]) => (
+          <div key={title} className="rounded-2xl border border-white/10 bg-background/45 p-5">
+            <p className="text-sm font-semibold text-foreground">{title}</p>
+            <p className="mt-2 text-sm leading-6 text-muted-foreground">{detail}</p>
+          </div>
         ))}
-      </div>
-
-      <div className="mt-16 p-8 rounded-2xl border border-white/5 bg-[#161618]/30 backdrop-blur-sm text-center">
-        <p className="text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-          From managing customers, scheduling, and operations to analytics, employees, AI automation, 
-          websites, reputation management, and communications — Integris brings everything into{" "}
-          <span className="text-foreground font-medium">one unified platform</span>.
-        </p>
       </div>
     </SectionWrapper>
   );

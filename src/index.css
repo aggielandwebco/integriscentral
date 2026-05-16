@@ -1,49 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+  background: #07090f;
+}
+
 body {
   margin: 0;
+  min-width: 320px;
+  color: #f8fafc;
+  background:
+    linear-gradient(135deg, rgba(91, 140, 255, 0.08), transparent 32%),
+    linear-gradient(225deg, rgba(199, 168, 107, 0.08), transparent 28%),
+    #07090f;
   font-family:
     Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
-  color: #17202a;
-  background: #f5f7fa;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
-.app-shell {
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
-  padding: 32px;
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-.hero {
-  width: min(720px, 100%);
-  padding: 40px;
-  border: 1px solid #dbe3ea;
-  border-radius: 8px;
-  background: #ffffff;
+::selection {
+  color: #ffffff;
+  background: rgba(91, 140, 255, 0.45);
 }
 
-.eyebrow {
-  margin: 0 0 12px;
-  color: #1d6f8f;
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0;
-  text-transform: uppercase;
-}
+@layer utilities {
+  .creative-grid {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: linear-gradient(to bottom, transparent, black 14%, black 82%, transparent);
+  }
 
-h1 {
-  margin: 0 0 12px;
-  font-size: clamp(2rem, 4vw, 3.5rem);
-  line-height: 1;
-}
+  .creative-aurora {
+    background:
+      linear-gradient(120deg, rgba(91, 140, 255, 0.18), transparent 30%),
+      linear-gradient(240deg, rgba(199, 168, 107, 0.14), transparent 32%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.045), transparent 52%);
+    animation: gradient-drift 12s ease-in-out infinite;
+  }
 
-p {
-  margin: 0;
-  color: #52616f;
-  font-size: 1.05rem;
-  line-height: 1.6;
+  .glass-panel {
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.085), rgba(255, 255, 255, 0.035)),
+      rgba(13, 17, 26, 0.74);
+    box-shadow: 0 24px 90px rgba(0, 0, 0, 0.32);
+    backdrop-filter: blur(22px);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
 }
