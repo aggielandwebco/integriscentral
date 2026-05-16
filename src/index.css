@@ -1,78 +1,9 @@
-<<<<<<< HEAD
-=======
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
->>>>>>> 12b236b45efa8c52049dcb45a6ff3cbcad037dda
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-<<<<<<< HEAD
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-  background: #07090f;
-}
-
-body {
-  margin: 0;
-  min-width: 320px;
-  color: #f8fafc;
-  background:
-    linear-gradient(135deg, rgba(91, 140, 255, 0.08), transparent 32%),
-    linear-gradient(225deg, rgba(199, 168, 107, 0.08), transparent 28%),
-    #07090f;
-  font-family:
-    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-::selection {
-  color: #ffffff;
-  background: rgba(91, 140, 255, 0.45);
-}
-
-@layer utilities {
-  .creative-grid {
-    background-image:
-      linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
-    background-size: 56px 56px;
-    mask-image: linear-gradient(to bottom, transparent, black 14%, black 82%, transparent);
-  }
-
-  .creative-aurora {
-    background:
-      linear-gradient(120deg, rgba(91, 140, 255, 0.18), transparent 30%),
-      linear-gradient(240deg, rgba(199, 168, 107, 0.14), transparent 32%),
-      linear-gradient(180deg, rgba(255, 255, 255, 0.045), transparent 52%);
-    animation: gradient-drift 12s ease-in-out infinite;
-  }
-
-  .glass-panel {
-    border: 1px solid rgba(255, 255, 255, 0.09);
-    background:
-      linear-gradient(180deg, rgba(255, 255, 255, 0.085), rgba(255, 255, 255, 0.035)),
-      rgba(13, 17, 26, 0.74);
-    box-shadow: 0 24px 90px rgba(0, 0, 0, 0.32);
-    backdrop-filter: blur(22px);
-  }
-
-  .text-balance {
-    text-wrap: balance;
-  }
-=======
 @layer base {
   :root {
     --font-inter: 'Inter', sans-serif;
@@ -175,5 +106,4 @@ html {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #3B82F6;
->>>>>>> 12b236b45efa8c52049dcb45a6ff3cbcad037dda
 }
