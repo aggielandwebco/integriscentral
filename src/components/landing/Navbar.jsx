@@ -38,7 +38,7 @@ export default function Navbar() {
         <a href="#home" className="flex items-center gap-3">
           <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#111214] border border-white/10 shadow-xl shadow-black/20">
             <img
-              src="/assets/integris-creative-logo-dark.svg"
+              src="/assets/integris-creative-mark.svg"
               alt="Integris Creative"
               className="h-8 w-8 object-contain"
             />

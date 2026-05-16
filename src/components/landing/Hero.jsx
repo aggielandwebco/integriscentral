@@ -43,16 +43,16 @@ export default function Hero() {
             backgroundSize: "60px 60px",
           }}
         />
-        {/* Decorative hero shapes */}
+        {/* Logo watermark */}
         <img
-          src="/assets/hero-decor-shape.svg"
-          alt="Abstract decorative background"
-          className="pointer-events-none absolute top-10 left-10 hidden lg:block w-80 opacity-20 blur-sm"
+          src="/assets/integris-creative-mark.svg"
+          alt="Integris Creative background mark"
+          className="pointer-events-none absolute top-10 left-8 hidden lg:block w-64 opacity-15 blur-sm"
         />
         <img
-          src="/assets/hero-decor-shape.svg"
-          alt="Abstract decorative background"
-          className="pointer-events-none absolute bottom-16 right-8 hidden xl:block w-96 opacity-15 blur-xl"
+          src="/assets/integris-systems-logo.svg"
+          alt="Integris Systems watermark"
+          className="pointer-events-none absolute bottom-12 right-12 hidden xl:block w-[360px] opacity-10 blur-xl"
         />
         {/* Golden thread */}
         <div className="absolute left-1/2 top-0 w-px h-full bg-gradient-to-b from-transparent via-gold/20 to-transparent" />
@@ -116,27 +116,39 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.55 }}
-            className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
+            className="mt-12 grid gap-4 sm:grid-cols-2"
           >
-            {[
-              { initials: "IS", label: "Integris Systems" },
-              { initials: "LN", label: "Lunar Studio" },
-              { initials: "NP", label: "Nova Pulse" },
-              { initials: "AC", label: "Atlas Commerce" },
-            ].map(({ initials, label }) => (
-              <div
-                key={label}
-                className="flex items-center gap-3 rounded-3xl border border-white/10 bg-white/5 px-4 py-3 shadow-xl shadow-black/10"
-              >
-                <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-primary/10 text-primary font-semibold">
-                  {initials}
-                </div>
+            <div className="rounded-3xl border border-white/10 bg-white/5 p-4 shadow-xl shadow-black/10">
+              <div className="flex items-center gap-4">
+                <img
+                  src="/assets/integris-systems-logo.svg"
+                  alt="Integris Systems logo"
+                  className="h-16 w-auto"
+                />
                 <div>
-                  <p className="text-sm font-semibold text-foreground">{label}</p>
-                  <p className="text-[11px] uppercase tracking-[0.24em] text-muted-foreground">Trusted partner</p>
+                  <p className="text-sm font-semibold text-foreground">Integris Systems</p>
+                  <p className="text-xs text-muted-foreground max-w-xs">
+                    Smart systems. Stronger businesses.
+                  </p>
                 </div>
               </div>
-            ))}
+            </div>
+
+            <div className="rounded-3xl border border-white/10 bg-white/5 p-4 shadow-xl shadow-black/10">
+              <div className="flex items-center gap-4">
+                <img
+                  src="/assets/integris-creative-mark.svg"
+                  alt="Integris Creative mark"
+                  className="h-16 w-16"
+                />
+                <div>
+                  <p className="text-sm font-semibold text-foreground">Integris Creative</p>
+                  <p className="text-xs text-muted-foreground max-w-xs">
+                    Modern digital identity and infrastructure design.
+                  </p>
+                </div>
+              </div>
+            </div>
           </motion.div>
         </div>
 

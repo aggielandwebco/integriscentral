@@ -1,6 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
-  <rect x="6" y="6" width="88" height="88" rx="22" fill="#071014" stroke="#3B82F6" stroke-width="4" />
-  <path d="M30 32h18v18H30z" fill="#C5A059" />
-  <circle cx="68" cy="42" r="10" fill="#3B82F6" />
-  <path d="M24 68h52" stroke="#ffffff" stroke-width="8" stroke-linecap="round" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" fill="none">
+  <defs>
+    <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#C5A059" />
+      <stop offset="100%" stop-color="#F2D38A" />
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="1200" height="520" fill="transparent" />
+  <path d="M220 80h46v220h-46z" fill="#111" />
+  <path d="M322 114c34-58 96-84 152-68 52 16 84 60 70 108-14 48-70 74-124 86-54 12-102 10-142 14v-32c44-4 86-1 138-12 42-8 76-27 90-60 14-34-4-68-50-74-44-6-98 20-116 70l-24-14z" fill="url(#goldGrad)" />
+  <text x="600" y="220" text-anchor="middle" font-family="Inter, sans-serif" font-size="92" letter-spacing="24" font-weight="700" fill="#111">
+    INTEGRIS
+  </text>
+  <text x="600" y="318" text-anchor="middle" font-family="Inter, sans-serif" font-size="76" letter-spacing="18" font-weight="700" fill="url(#goldGrad)">
+    SYSTEMS
+  </text>
+  <line x1="280" y1="356" x2="460" y2="356" stroke="#C5A059" stroke-width="8" />
+  <line x1="740" y1="356" x2="920" y2="356" stroke="#C5A059" stroke-width="8" />
+  <text x="600" y="428" text-anchor="middle" font-family="Inter, sans-serif" font-size="30" letter-spacing="6" fill="#111" opacity="0.85">
+    SMART SYSTEMS. STRONGER BUSINESSES.
+  </text>
 </svg>

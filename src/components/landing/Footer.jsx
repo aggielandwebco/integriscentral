@@ -84,7 +84,7 @@ export default function Footer() {
 
         <div className="pt-8 border-t border-white/10 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between text-xs text-muted-foreground">
           <div className="flex items-center gap-3">
-            <img src="/assets/integris-creative-logo-dark.png" alt="Integris Creative" className="h-5 w-5 object-contain opacity-90" />
+            <img src="/assets/integris-creative-mark.svg" alt="Integris Creative" className="h-5 w-5 object-contain opacity-90" />
             <p>© {new Date().getFullYear()} Integris Creative. All rights reserved.</p>
           </div>
           <p>Premium digital strategy, design, and website systems.</p>
