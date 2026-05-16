@@ -1,191 +1,82 @@
-<<<<<<< HEAD
 import React from "react";
 
 const footerLinks = {
-  Ecosystem: [
-    { label: "Integris Nexus", href: "#ecosystem" },
-    { label: "Integris Ops", href: "#ecosystem" },
-    { label: "Integris Creative", href: "#ecosystem" },
-    { label: "Aggieland Web Co", href: "#ecosystem" },
-  ],
-  Product: [
-    { label: "Features", href: "#features" },
-    { label: "Roadmap", href: "#roadmap" },
-    { label: "Security", href: "#security" },
-    { label: "Pricing", href: "#contact" },
+  Services: [
+    { label: "Website Design", href: "#services" },
+    { label: "Branding & Identity", href: "#services" },
+    { label: "Landing Pages", href: "#services" },
+    { label: "Digital Strategy", href: "#services" },
   ],
   Company: [
     { label: "About", href: "#about" },
-    { label: "Mission", href: "#mission" },
+    { label: "Process", href: "#process" },
+    { label: "Portfolio", href: "#portfolio" },
     { label: "Values", href: "#values" },
+  ],
+  Support: [
+    { label: "Contact", href: "#contact" },
+    { label: "Project Planning", href: "#contact" },
     { label: "Careers", href: "#contact" },
   ],
   Legal: [
     { label: "Privacy Policy", href: "#" },
     { label: "Terms of Service", href: "#" },
-    { label: "Cookie Policy", href: "#" },
   ],
 };
 
 export default function Footer() {
   return (
-    <footer className="relative border-t border-white/5 bg-[#0A0A0B]">
+    <footer id="contact" className="relative border-t border-white/5 bg-[#070708]">
       <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
-          {/* Brand column */}
-          <div className="col-span-2 md:col-span-1">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-primary to-primary/60 flex items-center justify-center">
-                <span className="text-white font-bold text-xs">I</span>
-              </div>
-              <span className="text-foreground font-semibold tracking-tight">
-                Integris<span className="text-primary">.</span>
-              </span>
-            </div>
-            <p className="text-xs text-muted-foreground leading-relaxed mb-4">
-              The modern operating system for businesses. One ecosystem to manage, scale, and grow.
+        <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-10 mb-16">
+          <div className="rounded-[2rem] border border-white/10 bg-white/5 p-10 backdrop-blur-xl shadow-2xl shadow-black/20">
+            <span className="inline-flex rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.24em] text-primary mb-4">
+              Let’s build together
+            </span>
+            <h3 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+              Ready to launch a more polished digital presence?
+            </h3>
+            <p className="mt-4 text-sm leading-7 text-muted-foreground max-w-xl">
+              Integris Creative helps ambitious companies scale their brand and web presence with premium design, strategic execution, and long-term support.
             </p>
-            <div className="flex gap-3">
-              {["X", "Li", "Gh"].map((social) => (
-                <a
-                  key={social}
-                  href="#"
-                  className="w-8 h-8 rounded-lg border border-white/5 bg-white/5 flex items-center justify-center text-xs text-muted-foreground hover:text-foreground hover:border-white/10 transition-colors"
-                >
-                  {social}
-                </a>
-              ))}
+            <div className="mt-8 space-y-4 text-sm text-muted-foreground">
+              <div>
+                <p className="font-medium text-foreground">Email</p>
+                <p>hello@integriscreative.com</p>
+              </div>
+              <div>
+                <p className="font-medium text-foreground">Location</p>
+                <p>Nationwide digital design partners</p>
+              </div>
             </div>
           </div>
 
-          {/* Link columns */}
-          {Object.entries(footerLinks).map(([category, links]) => (
-            <div key={category}>
-              <h4 className="text-xs font-semibold text-foreground uppercase tracking-wider mb-4">
-                {category}
-              </h4>
-              <ul className="space-y-2.5">
-                {links.map((link) => (
-                  <li key={link.label}>
-                    <a
-                      href={link.href}
-                      className="text-xs text-muted-foreground hover:text-foreground transition-colors"
-                    >
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
+            {Object.entries(footerLinks).map(([category, links]) => (
+              <div key={category}>
+                <h4 className="text-xs font-semibold uppercase tracking-[0.24em] text-muted-foreground mb-4">
+                  {category}
+                </h4>
+                <ul className="space-y-3 text-sm">
+                  {links.map((link) => (
+                    <li key={link.label}>
+                      <a href={link.href} className="text-muted-foreground hover:text-foreground transition-colors">
+                        {link.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-muted-foreground/50">
-            © {new Date().getFullYear()} Integris Systems. All rights reserved.
-          </p>
-          <p className="text-xs text-muted-foreground/30">
-            Built for the future of business.
-          </p>
+        <div className="pt-8 border-t border-white/10 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between text-xs text-muted-foreground">
+          <p>© {new Date().getFullYear()} Integris Creative. All rights reserved.</p>
+          <p>Premium digital strategy, design, and website systems.</p>
         </div>
       </div>
     </footer>
   );
 }
-=======
-import React from "react";
 
-const footerLinks = {
-  Ecosystem: [
-    { label: "Integris Nexus", href: "#ecosystem" },
-    { label: "Integris Ops", href: "#ecosystem" },
-    { label: "Integris Creative", href: "#ecosystem" },
-    { label: "Aggieland Web Co", href: "#ecosystem" },
-  ],
-  Product: [
-    { label: "Features", href: "#features" },
-    { label: "Roadmap", href: "#roadmap" },
-    { label: "Security", href: "#security" },
-    { label: "Pricing", href: "#contact" },
-  ],
-  Company: [
-    { label: "About", href: "#about" },
-    { label: "Mission", href: "#mission" },
-    { label: "Values", href: "#values" },
-    { label: "Careers", href: "#contact" },
-  ],
-  Legal: [
-    { label: "Privacy Policy", href: "#" },
-    { label: "Terms of Service", href: "#" },
-    { label: "Cookie Policy", href: "#" },
-  ],
-};
-
-export default function Footer() {
-  return (
-    <footer className="relative border-t border-white/5 bg-[#0A0A0B]">
-      <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
-          {/* Brand column */}
-          <div className="col-span-2 md:col-span-1">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-primary to-primary/60 flex items-center justify-center">
-                <span className="text-white font-bold text-xs">I</span>
-              </div>
-              <span className="text-foreground font-semibold tracking-tight">
-                Integris<span className="text-primary">.</span>
-              </span>
-            </div>
-            <p className="text-xs text-muted-foreground leading-relaxed mb-4">
-              The modern operating system for businesses. One ecosystem to manage, scale, and grow.
-            </p>
-            <div className="flex gap-3">
-              {["X", "Li", "Gh"].map((social) => (
-                <a
-                  key={social}
-                  href="#"
-                  className="w-8 h-8 rounded-lg border border-white/5 bg-white/5 flex items-center justify-center text-xs text-muted-foreground hover:text-foreground hover:border-white/10 transition-colors"
-                >
-                  {social}
-                </a>
-              ))}
-            </div>
-          </div>
-
-          {/* Link columns */}
-          {Object.entries(footerLinks).map(([category, links]) => (
-            <div key={category}>
-              <h4 className="text-xs font-semibold text-foreground uppercase tracking-wider mb-4">
-                {category}
-              </h4>
-              <ul className="space-y-2.5">
-                {links.map((link) => (
-                  <li key={link.label}>
-                    <a
-                      href={link.href}
-                      className="text-xs text-muted-foreground hover:text-foreground transition-colors"
-                    >
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-
-        {/* Bottom bar */}
-        <div className="pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-muted-foreground/50">
-            © {new Date().getFullYear()} Integris Systems. All rights reserved.
-          </p>
-          <p className="text-xs text-muted-foreground/30">
-            Built for the future of business.
-          </p>
-        </div>
-      </div>
-    </footer>
-  );
-}
->>>>>>> 12b236b45efa8c52049dcb45a6ff3cbcad037dda

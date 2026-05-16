@@ -4,10 +4,12 @@ import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { label: "Home", href: "#home" },
-  { label: "Ecosystem", href: "#ecosystem" },
-  { label: "Features", href: "#features" },
-  { label: "Roadmap", href: "#roadmap" },
   { label: "About", href: "#about" },
+  { label: "Services", href: "#services" },
+  { label: "Why it matters", href: "#why" },
+  { label: "Process", href: "#process" },
+  { label: "Portfolio", href: "#portfolio" },
+  { label: "Values", href: "#values" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -34,11 +36,11 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         <a href="#home" className="flex items-center gap-2.5">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-primary/60 flex items-center justify-center">
+          <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center shadow-xl shadow-primary/15">
             <span className="text-white font-bold text-sm">I</span>
           </div>
           <span className="text-foreground font-semibold text-lg tracking-tight">
-            Integris<span className="text-primary">.</span>
+            Integris<span className="text-primary"> Creative</span>
           </span>
         </a>
 
@@ -56,16 +58,16 @@ export default function Navbar() {
 
         <div className="hidden md:flex items-center gap-3">
           <a
-            href="#ecosystem"
+            href="#services"
             className="text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
-            Log in
+            View Services
           </a>
           <a
             href="#contact"
-            className="px-4 py-2 text-sm font-medium bg-primary text-white rounded-lg hover:bg-primary/90 transition-all hover:shadow-lg hover:shadow-primary/20"
+            className="px-4 py-2 text-sm font-medium bg-primary text-white rounded-full hover:bg-primary/90 transition-all shadow-lg shadow-primary/15"
           >
-            Request Demo
+            Start a Project
           </a>
         </div>
 
@@ -99,9 +101,9 @@ export default function Navbar() {
               <div className="pt-3 border-t border-white/5">
                 <a
                   href="#contact"
-                  className="block w-full text-center px-4 py-2.5 text-sm font-medium bg-primary text-white rounded-lg"
+                  className="block w-full text-center px-4 py-2.5 text-sm font-medium bg-primary text-white rounded-full"
                 >
-                  Request Demo
+                  Start a Project
                 </a>
               </div>
             </div>

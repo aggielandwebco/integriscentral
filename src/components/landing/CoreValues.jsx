@@ -1,18 +1,40 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import SectionWrapper from "./SectionWrapper";
-import SectionHeading from "./SectionHeading.jsx";
-import { Lightbulb, TrendingUp, Minimize2, Shield, Lock, Palette, Server, Clock } from "lucide-react";
+import SectionHeading from "./SectionHeading";
+import { Lightbulb, Sparkles, ShieldCheck, Palette, Target, TrendingUp } from "lucide-react";
 
 const values = [
-  { icon: Lightbulb, title: "Innovation", desc: "Pushing boundaries with cutting-edge technology and creative problem-solving to deliver transformative solutions." },
-  { icon: TrendingUp, title: "Scalability", desc: "Architecture designed to grow seamlessly with your business, from startup to enterprise." },
-  { icon: Minimize2, title: "Simplicity", desc: "Complex systems made intuitive. We believe powerful software should be effortless to use." },
-  { icon: Shield, title: "Reliability", desc: "Enterprise-grade infrastructure ensuring your business runs without interruption, 24/7." },
-  { icon: Lock, title: "Security", desc: "Bank-level data protection with row-level security, encryption, and strict access controls." },
-  { icon: Palette, title: "User Experience", desc: "Every pixel intentional. Every interaction polished. Software that people genuinely enjoy using." },
-  { icon: Server, title: "Modern Infrastructure", desc: "Cloud-native, edge-optimized, and built on the latest in distributed computing technology." },
-  { icon: Clock, title: "Long-Term Thinking", desc: "Building for decades, not quarters. Every decision is made with sustainable growth in mind." },
+  {
+    icon: Lightbulb,
+    title: "Clarity",
+    desc: "Design systems and messaging that feel effortless, clear, and immediately understandable.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Trust",
+    desc: "Professional digital experiences that help brands make a confident first impression.",
+  },
+  {
+    icon: Palette,
+    title: "Creativity",
+    desc: "A polished visual language that feels premium without sacrificing usability.",
+  },
+  {
+    icon: Target,
+    title: "Strategy",
+    desc: "Every design decision supports your business goals and audience behavior.",
+  },
+  {
+    icon: TrendingUp,
+    title: "Long-term Growth",
+    desc: "Sustainable digital systems that evolve with your business over time.",
+  },
+  {
+    icon: Sparkles,
+    title: "Quality",
+    desc: "Attention to detail in every interaction, copy, and interface element.",
+  },
 ];
 
 export default function CoreValues() {
@@ -22,9 +44,10 @@ export default function CoreValues() {
   return (
     <SectionWrapper id="values">
       <SectionHeading
+        align="left"
         tag="Core Values"
-        title="What We Stand For"
-        description="The principles that guide every line of code, every design decision, and every business strategy."
+        title="The principles that define how Integris Creative builds premium digital experiences."
+        description="These values guide every project, from brand strategy to website delivery and long-term support."
       />
 
       <div ref={ref} className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">

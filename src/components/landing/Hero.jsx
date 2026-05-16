@@ -1,7 +1,14 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const FloatingCard = ({ children, className, delay = 0 }) => (
+/**
+ * @param {{ children: React.ReactNode; className?: string; delay?: number }} props
+ */
+const FloatingCard = ({
+  children,
+  className,
+  delay = 0,
+}) => (
   <motion.div
     initial={{ opacity: 0, y: 30 }}
     animate={{ opacity: 1, y: 0 }}
@@ -50,7 +57,7 @@ export default function Hero() {
           >
             <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
             <span className="text-xs font-medium text-primary tracking-wide uppercase">
-              Building the Future of Business Software
+              Creative digital infrastructure for modern businesses
             </span>
           </motion.div>
 
@@ -60,12 +67,9 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.15 }}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05]"
           >
-            The Modern Operating{" "}
+            Creative Digital Infrastructure
             <br className="hidden sm:block" />
-            System for{" "}
-            <span className="bg-gradient-to-r from-primary via-primary/80 to-gold bg-clip-text text-transparent">
-              Businesses
-            </span>
+            for Modern Businesses
           </motion.h1>
 
           <motion.p
@@ -74,9 +78,7 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.3 }}
             className="mt-6 text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed"
           >
-            Integris Systems is building a scalable software ecosystem combining CRM,
-            operations, automation, analytics, AI tools, scheduling, and digital
-            presence management into one unified platform.
+            Integris Creative builds websites, branding systems, and digital experiences that help businesses look professional, earn trust, and grow online.
           </motion.p>
 
           <motion.div
@@ -86,25 +88,16 @@ export default function Hero() {
             className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
           >
             <a
-              href="#ecosystem"
-              className="group px-7 py-3.5 text-sm font-medium bg-primary text-white rounded-xl hover:bg-primary/90 transition-all hover:shadow-xl hover:shadow-primary/25 flex items-center gap-2"
-            >
-              Explore Ecosystem
-              <svg className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
-            </a>
-            <a
-              href="#features"
-              className="px-7 py-3.5 text-sm font-medium border border-white/10 text-foreground rounded-xl hover:bg-white/5 transition-all hover:border-white/20"
-            >
-              View Platforms
-            </a>
-            <a
               href="#contact"
-              className="px-7 py-3.5 text-sm font-medium text-gold border border-gold/20 rounded-xl hover:bg-gold/5 transition-all hover:border-gold/30"
+              className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-3.5 text-sm font-semibold text-white shadow-xl shadow-primary/20 transition hover:bg-primary/90"
             >
-              Request Demo
+              Start a Project
+            </a>
+            <a
+              href="#services"
+              className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-8 py-3.5 text-sm font-medium text-foreground transition hover:border-primary/20 hover:bg-white/10"
+            >
+              View Services
             </a>
           </motion.div>
         </div>

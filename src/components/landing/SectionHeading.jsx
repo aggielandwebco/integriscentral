@@ -1,14 +1,15 @@
-<<<<<<< HEAD
 import React from "react";
 
+/**
+ * @param {{ tag?: string; title: string; description?: string; align?: "left" | "center" }} props
+ */
 export default function SectionHeading({
   tag,
   title,
   description,
   align = "center",
 }) {
-  const alignment =
-    align === "left" ? "mx-0 text-left" : "mx-auto text-center";
+  const alignment = align === "left" ? "mx-0 text-left" : "mx-auto text-center";
 
   return (
     <div className={`mb-12 max-w-3xl ${alignment}`}>
@@ -28,26 +29,4 @@ export default function SectionHeading({
     </div>
   );
 }
-=======
-import React from "react";
 
-export default function SectionHeading({ tag, title, description }) {
-  return (
-    <div className="text-center max-w-3xl mx-auto mb-16">
-      {tag && (
-        <span className="inline-block text-xs font-medium uppercase tracking-widest text-primary mb-4">
-          {tag}
-        </span>
-      )}
-      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-foreground">
-        {title}
-      </h2>
-      {description && (
-        <p className="mt-4 text-base sm:text-lg text-muted-foreground leading-relaxed">
-          {description}
-        </p>
-      )}
-    </div>
-  );
-}
->>>>>>> 12b236b45efa8c52049dcb45a6ff3cbcad037dda
