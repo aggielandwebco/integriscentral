@@ -32,7 +32,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-10 mb-16">
           <div className="rounded-[2rem] border border-white/10 bg-white/5 p-10 backdrop-blur-xl shadow-2xl shadow-black/20">
             <span className="inline-flex rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.24em] text-primary mb-4">
-              Let’s build together
+              Let's build together
             </span>
             <h3 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
               Ready to launch a more polished digital presence?
@@ -85,7 +85,7 @@ export default function Footer() {
         <div className="pt-8 border-t border-white/10 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between text-xs text-muted-foreground">
           <div className="flex items-center gap-3">
             <img src="/assets/integris-creative-mark.svg" alt="Integris Creative" className="h-5 w-5 object-contain opacity-90" />
-            <p>© {new Date().getFullYear()} Integris Creative. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Integris Creative. All rights reserved.</p>
           </div>
           <p>Premium digital strategy, design, and website systems.</p>
         </div>
@@ -93,4 +93,3 @@ export default function Footer() {
     </footer>
   );
 }
-

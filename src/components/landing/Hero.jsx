@@ -1,238 +1,151 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { ArrowRight, MonitorPlay } from "lucide-react";
 
-/**
- * @param {{ children: React.ReactNode; className?: string; delay?: number }} props
- */
-const FloatingCard = ({
-  children,
-  className,
-  delay = 0,
-}) => (
-  <motion.div
-    initial={{ opacity: 0, y: 30 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.8, delay, ease: "easeOut" }}
-    className={`absolute rounded-xl border border-white/10 bg-[#161618]/60 backdrop-blur-xl shadow-2xl shadow-black/40 ${className}`}
-  >
-    {children}
-  </motion.div>
-);
+const proofPoints = ["Custom websites", "Brand systems", "Demo-ready launches"];
 
 export default function Hero() {
+  const sectionRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
+  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "14%"]);
+  const bgScale = useTransform(scrollYProgress, [0, 1], [1.05, 1.14]);
+  const visualY = useTransform(scrollYProgress, [0, 1], ["0px", "70px"]);
+
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated background */}
+    <section
+      id="home"
+      ref={sectionRef}
+      className="relative min-h-[94svh] overflow-hidden bg-[#050608]"
+    >
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[#0A0A0B]" />
-        <motion.div
-          animate={{ scale: [1, 1.1, 1], opacity: [0.3, 0.5, 0.3] }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-primary/10 blur-[120px]"
+        <motion.img
+          src="/assets/hero-laptop-demo.png"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 h-[112%] w-full object-cover opacity-45"
+          style={{ y: bgY, scale: bgScale }}
         />
-        <motion.div
-          animate={{ scale: [1.1, 1, 1.1], opacity: [0.2, 0.35, 0.2] }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-          className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] rounded-full bg-gold/5 blur-[100px]"
-        />
-        {/* Grid pattern */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_42%,rgba(60,108,180,0.24),transparent_36%),linear-gradient(90deg,rgba(5,6,8,0.98)_0%,rgba(5,6,8,0.78)_42%,rgba(5,6,8,0.36)_100%)]" />
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#0A0A0B] to-transparent" />
         <div
-          className="absolute inset-0 opacity-[0.03]"
+          className="absolute inset-0 opacity-[0.05]"
           style={{
-            backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
-            backgroundSize: "60px 60px",
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,0.18) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.18) 1px, transparent 1px)",
+            backgroundSize: "72px 72px",
           }}
         />
-        {/* Logo watermark */}
-        <img
+        <motion.img
           src="/assets/integris-creative-mark.svg"
-          alt="Integris Creative background mark"
-          className="pointer-events-none absolute top-10 left-8 hidden lg:block w-64 opacity-15 blur-sm"
+          alt=""
+          aria-hidden="true"
+          animate={{ opacity: [0.11, 0.18, 0.11], y: [0, -12, 0] }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+          className="pointer-events-none absolute -right-20 top-24 hidden w-80 opacity-15 blur-[1px] lg:block"
         />
-        <img
-          src="/assets/integris-systems-logo.svg"
-          alt="Integris Systems watermark"
-          className="pointer-events-none absolute bottom-12 right-12 hidden xl:block w-[360px] opacity-10 blur-xl"
-        />
-        {/* Golden thread */}
-        <div className="absolute left-1/2 top-0 w-px h-full bg-gradient-to-b from-transparent via-gold/20 to-transparent" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-24 pb-16">
-        <div className="text-center max-w-4xl mx-auto">
+      <div className="relative z-10 mx-auto grid max-w-7xl gap-14 px-6 pb-24 pt-28 sm:pt-36 lg:min-h-[94svh] lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
+        <div className="max-w-2xl">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 mb-8"
+            className="mb-7 inline-flex items-center gap-3 rounded-full border border-white/10 bg-black/40 px-3 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-primary backdrop-blur-xl"
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-            <span className="text-xs font-medium text-primary tracking-wide uppercase">
-              Creative digital infrastructure for modern businesses
-            </span>
+            <img
+              src="/assets/integris-creative-mark.svg"
+              alt="Integris Creative"
+              className="h-7 w-7 object-contain"
+            />
+            Creative studio
           </motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.15 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05]"
+            transition={{ duration: 0.7, delay: 0.12 }}
+            className="text-4xl font-bold leading-[1.04] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
           >
-            Creative Digital Infrastructure
-            <br className="hidden sm:block" />
-            for Modern Businesses
+            Websites that look premium before the first click.
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.3 }}
-            className="mt-6 text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed"
+            transition={{ duration: 0.7, delay: 0.26 }}
+            className="mt-6 max-w-xl text-base leading-8 text-white/70 sm:text-lg"
           >
-            Integris Creative builds websites, branding systems, and digital experiences that help businesses look professional, earn trust, and grow online.
+            Integris Creative builds polished websites, brand systems, and digital launch experiences for businesses that need to look established, sharp, and ready to grow.
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.45 }}
-            className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
+            transition={{ duration: 0.7, delay: 0.38 }}
+            className="mt-9 flex flex-col gap-4 sm:flex-row"
           >
             <a
               href="#contact"
-              className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-3.5 text-sm font-semibold text-white shadow-xl shadow-primary/20 transition hover:bg-primary/90"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-white shadow-xl shadow-primary/25 transition hover:bg-primary/90"
             >
               Start a Project
+              <ArrowRight className="h-4 w-4" />
             </a>
             <a
-              href="#services"
-              className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-8 py-3.5 text-sm font-medium text-foreground transition hover:border-primary/20 hover:bg-white/10"
+              href="#portfolio"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/10 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-xl transition hover:border-primary/30 hover:bg-white/10"
             >
-              View Services
+              <MonitorPlay className="h-4 w-4" />
+              See Demo Work
             </a>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.55 }}
-            className="mt-12 grid gap-4 sm:grid-cols-2"
+            transition={{ duration: 0.7, delay: 0.5 }}
+            className="mt-10 flex flex-wrap gap-3"
           >
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-4 shadow-xl shadow-black/10">
-              <div className="flex items-center gap-4">
-                <img
-                  src="/assets/integris-systems-logo.svg"
-                  alt="Integris Systems logo"
-                  className="h-16 w-auto"
-                />
-                <div>
-                  <p className="text-sm font-semibold text-foreground">Integris Systems</p>
-                  <p className="text-xs text-muted-foreground max-w-xs">
-                    Smart systems. Stronger businesses.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-4 shadow-xl shadow-black/10">
-              <div className="flex items-center gap-4">
-                <img
-                  src="/assets/integris-creative-mark.svg"
-                  alt="Integris Creative mark"
-                  className="h-16 w-16"
-                />
-                <div>
-                  <p className="text-sm font-semibold text-foreground">Integris Creative</p>
-                  <p className="text-xs text-muted-foreground max-w-xs">
-                    Modern digital identity and infrastructure design.
-                  </p>
-                </div>
-              </div>
-            </div>
+            {proofPoints.map((point) => (
+              <span
+                key={point}
+                className="rounded-full border border-white/10 bg-black/25 px-4 py-2 text-xs font-medium text-white/70 backdrop-blur-xl"
+              >
+                {point}
+              </span>
+            ))}
           </motion.div>
         </div>
 
-        {/* Floating UI mockup cards */}
-        <div className="relative mt-20 h-[280px] sm:h-[320px] hidden md:block">
-          <FloatingCard className="top-0 left-[8%] w-56 p-4" delay={0.6}>
-            <div className="flex items-center gap-2 mb-3">
-              <div className="w-2 h-2 rounded-full bg-green-400" />
-              <span className="text-xs text-muted-foreground">Live Analytics</span>
-            </div>
-            <div className="space-y-2">
-              <div className="h-2 bg-primary/20 rounded-full w-full" />
-              <div className="h-2 bg-primary/30 rounded-full w-4/5" />
-              <div className="h-2 bg-primary/15 rounded-full w-3/5" />
-            </div>
-            <div className="mt-3 text-2xl font-bold text-foreground">$142.8K</div>
-            <div className="text-xs text-green-400">+23.4% this month</div>
-          </FloatingCard>
-
-          <FloatingCard className="top-6 right-[8%] w-52 p-4" delay={0.8}>
-            <div className="text-xs text-muted-foreground mb-2">Active Users</div>
-            <div className="flex items-end gap-1 h-16">
-              {[40, 65, 45, 80, 55, 90, 70].map((h, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ height: 0 }}
-                  animate={{ height: `${h}%` }}
-                  transition={{ duration: 0.6, delay: 1 + i * 0.1 }}
-                  className="flex-1 bg-gradient-to-t from-primary/40 to-primary rounded-sm"
-                />
-              ))}
-            </div>
-            <div className="mt-2 text-lg font-semibold text-foreground">2,847</div>
-          </FloatingCard>
-
-          <FloatingCard className="bottom-0 left-[28%] w-64 p-4" delay={1}>
-            <div className="flex items-center justify-between mb-3">
-              <span className="text-xs text-muted-foreground">Automation Pipeline</span>
-              <span className="px-2 py-0.5 text-[10px] bg-primary/10 text-primary rounded-full">Running</span>
-            </div>
-            <div className="space-y-2.5">
-              {["CRM Sync", "Email Campaign", "Report Gen"].map((item, i) => (
-                <div key={i} className="flex items-center gap-2">
-                  <div className={`w-1.5 h-1.5 rounded-full ${i === 0 ? "bg-green-400" : i === 1 ? "bg-primary" : "bg-gold"}`} />
-                  <span className="text-xs text-foreground/80">{item}</span>
-                  <div className="flex-1" />
-                  <span className="text-[10px] text-muted-foreground">{i === 0 ? "Done" : i === 1 ? "Active" : "Queued"}</span>
-                </div>
-              ))}
-            </div>
-          </FloatingCard>
-
-          <FloatingCard className="bottom-4 right-[20%] w-48 p-4" delay={1.1}>
-            <div className="text-xs text-muted-foreground mb-1">Ecosystem Health</div>
-            <div className="relative w-20 h-20 mx-auto my-2">
-              <svg viewBox="0 0 36 36" className="w-full h-full -rotate-90">
-                <circle cx="18" cy="18" r="16" fill="none" stroke="#161618" strokeWidth="3" />
-                <motion.circle
-                  cx="18" cy="18" r="16" fill="none" stroke="#3B82F6" strokeWidth="3"
-                  strokeDasharray="100.5" strokeDashoffset="100.5"
-                  animate={{ strokeDashoffset: 8 }}
-                  transition={{ duration: 1.5, delay: 1.3 }}
-                  strokeLinecap="round"
-                />
-              </svg>
-              <span className="absolute inset-0 flex items-center justify-center text-sm font-bold text-foreground">98%</span>
-            </div>
-            <div className="text-center text-[10px] text-green-400">All Systems Operational</div>
-          </FloatingCard>
-        </div>
-
-        {/* Scroll indicator */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5 }}
-          className="flex justify-center mt-12"
+          style={{ y: visualY }}
+          className="relative hidden [perspective:1200px] lg:block"
         >
           <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="w-5 h-8 rounded-full border border-white/20 flex justify-center pt-1.5"
+            initial={{ opacity: 0, rotateX: 22, rotateY: -12, y: 42 }}
+            animate={{ opacity: 1, rotateX: 0, rotateY: 0, y: 0 }}
+            transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
           >
-            <div className="w-1 h-2 bg-white/40 rounded-full" />
+            <motion.div
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+              className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#090B10] shadow-2xl shadow-black/50"
+            >
+              <img
+                src="/assets/hero-laptop-demo.png"
+                alt="Laptop opening with a demo website on screen"
+                className="h-[520px] w-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-tr from-black/40 via-transparent to-white/10" />
+              <div className="absolute left-5 top-5 flex items-center gap-2 rounded-full border border-white/10 bg-black/40 px-3 py-2 text-xs font-medium text-white/70 backdrop-blur-xl">
+                <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_18px_rgba(52,211,153,0.8)]" />
+                Demo site preview
+              </div>
+            </motion.div>
           </motion.div>
         </motion.div>
       </div>

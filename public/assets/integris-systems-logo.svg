@@ -1,22 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 760" role="img" aria-labelledby="title desc">
+  <title id="title">Integris Systems logo</title>
+  <desc id="desc">Integris Systems logo with IS monogram and Smart Systems, Stronger Businesses tagline.</desc>
   <defs>
-    <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#C5A059" />
-      <stop offset="100%" stop-color="#F2D38A" />
+    <linearGradient id="gold" x1="280" y1="80" x2="580" y2="440" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#A7781F"/>
+      <stop offset="0.44" stop-color="#C99C3A"/>
+      <stop offset="1" stop-color="#8A611A"/>
+    </linearGradient>
+    <linearGradient id="ink" x1="320" y1="48" x2="380" y2="338" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2C2B2A"/>
+      <stop offset="1" stop-color="#080808"/>
     </linearGradient>
   </defs>
-  <rect x="0" y="0" width="1200" height="520" fill="transparent" />
-  <path d="M220 80h46v220h-46z" fill="#111" />
-  <path d="M322 114c34-58 96-84 152-68 52 16 84 60 70 108-14 48-70 74-124 86-54 12-102 10-142 14v-32c44-4 86-1 138-12 42-8 76-27 90-60 14-34-4-68-50-74-44-6-98 20-116 70l-24-14z" fill="url(#goldGrad)" />
-  <text x="600" y="220" text-anchor="middle" font-family="Inter, sans-serif" font-size="92" letter-spacing="24" font-weight="700" fill="#111">
-    INTEGRIS
-  </text>
-  <text x="600" y="318" text-anchor="middle" font-family="Inter, sans-serif" font-size="76" letter-spacing="18" font-weight="700" fill="url(#goldGrad)">
-    SYSTEMS
-  </text>
-  <line x1="280" y1="356" x2="460" y2="356" stroke="#C5A059" stroke-width="8" />
-  <line x1="740" y1="356" x2="920" y2="356" stroke="#C5A059" stroke-width="8" />
-  <text x="600" y="428" text-anchor="middle" font-family="Inter, sans-serif" font-size="30" letter-spacing="6" fill="#111" opacity="0.85">
-    SMART SYSTEMS. STRONGER BUSINESSES.
-  </text>
+  <rect width="900" height="760" fill="#FFFFFF"/>
+  <g aria-hidden="true">
+    <text x="404" y="246" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="238" font-weight="500" fill="url(#ink)">I</text>
+    <text x="492" y="314" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="266" font-weight="400" fill="url(#gold)">S</text>
+    <text x="450" y="498" text-anchor="middle" font-family="'Avenir Next', Montserrat, Inter, Arial, sans-serif" font-size="66" font-weight="500" letter-spacing="43" fill="#252729">INTEGRIS</text>
+    <line x1="82" y1="585" x2="208" y2="585" stroke="#A7781F" stroke-width="4"/>
+    <text x="450" y="602" text-anchor="middle" font-family="'Avenir Next', Montserrat, Inter, Arial, sans-serif" font-size="45" font-weight="500" letter-spacing="25" fill="url(#gold)">SYSTEMS</text>
+    <line x1="692" y1="585" x2="818" y2="585" stroke="#A7781F" stroke-width="4"/>
+    <text x="450" y="692" text-anchor="middle" font-family="'Avenir Next', Montserrat, Inter, Arial, sans-serif" font-size="24" font-weight="500" letter-spacing="9" fill="#2B3036">SMART SYSTEMS. STRONGER BUSINESSES.</text>
+  </g>
 </svg>
