@@ -39,7 +39,7 @@ export default function Hero() {
           }}
         />
         <motion.img
-          src="/assets/integris-creative-mark.svg"
+          src="/assets/integris-creative-logo-dark.png"
           alt=""
           aria-hidden="true"
           animate={{ opacity: [0.11, 0.18, 0.11], y: [0, -12, 0] }}
@@ -57,7 +57,7 @@ export default function Hero() {
             className="mb-7 inline-flex items-center gap-3 rounded-full border border-white/10 bg-black/40 px-3 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-primary backdrop-blur-xl"
           >
             <img
-              src="/assets/integris-creative-mark.svg"
+              src="/assets/integris-creative-logo-dark.png"
               alt="Integris Creative"
               className="h-7 w-7 object-contain"
             />
