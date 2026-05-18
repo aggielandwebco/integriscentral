@@ -5,8 +5,8 @@ import SectionHeading from "./SectionHeading";
 
 const portfolioItems = [
   {
-    title: "ScaleGate: Product Launch Platform",
-    description: "High-conversion interface for a premium B2B launch strategy with differentiated brand design.",
+    title: "Tailoring by Renoj",
+    description: "Luxury high-end tailoring business in Houston, TX looking to elevate their digital presence with a polished website and cohesive brand system.",
     tags: ["Web Design", "Brand System", "Conversion"],
     image: "/assets/responsive-demo-devices.png",
     imageAlt: "Laptop and phone showing a polished responsive demo website",
