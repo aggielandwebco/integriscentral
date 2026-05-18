@@ -29,7 +29,12 @@ const pillars = [
 
 export default function About() {
   return (
-    <SectionWrapper id="about">
+    <SectionWrapper
+      id="about"
+      backgroundImage="/assets/studio-workspace.png"
+      backgroundOpacity={0.08}
+      backgroundPosition="center"
+    >
       <div className="grid gap-16 lg:grid-cols-[0.95fr_1.05fr] lg:items-end">
         <SectionHeading
           align="left"

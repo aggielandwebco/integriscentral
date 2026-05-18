@@ -24,7 +24,12 @@ const reasons = [
 
 export default function WhyItMatters() {
   return (
-    <SectionWrapper id="why">
+    <SectionWrapper
+      id="why"
+      backgroundImage="/assets/responsive-demo-devices.png"
+      backgroundOpacity={0.07}
+      backgroundPosition="right top"
+    >
       <SectionHeading
         tag="Why It Matters"
         title="A superior website isn’t just attractive — it makes your business easier to trust and easier to hire."

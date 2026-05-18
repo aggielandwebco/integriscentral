@@ -13,7 +13,12 @@ const steps = [
 
 export default function Process() {
   return (
-    <SectionWrapper id="process">
+    <SectionWrapper
+      id="process"
+      backgroundImage="/assets/responsive-demo-devices.png"
+      backgroundOpacity={0.05}
+      backgroundPosition="left center"
+    >
       <SectionHeading
         tag="Process"
         title="A clear timeline from discovery to launch and beyond."

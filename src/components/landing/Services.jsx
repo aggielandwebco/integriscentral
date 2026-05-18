@@ -17,7 +17,12 @@ const services = [
 
 export default function Services() {
   return (
-    <SectionWrapper id="services">
+    <SectionWrapper
+      id="services"
+      backgroundImage="/assets/hero-laptop-demo.png"
+      backgroundOpacity={0.06}
+      backgroundPosition="center"
+    >
       <SectionHeading
         tag="Services"
         title="Premium digital services built to strengthen how your business appears online."

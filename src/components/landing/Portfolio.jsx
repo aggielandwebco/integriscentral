@@ -29,7 +29,12 @@ const portfolioItems = [
 
 export default function Portfolio() {
   return (
-    <SectionWrapper id="portfolio">
+    <SectionWrapper
+      id="portfolio"
+      backgroundImage="/assets/hero-laptop-demo.png"
+      backgroundOpacity={0.08}
+      backgroundPosition="center"
+    >
       <SectionHeading
         tag="Portfolio"
         title="Premium work designed to feel polished, strategic, and high-end."

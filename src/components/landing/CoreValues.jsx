@@ -42,7 +42,12 @@ export default function CoreValues() {
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <SectionWrapper id="values">
+    <SectionWrapper
+      id="values"
+      backgroundImage="/assets/studio-workspace.png"
+      backgroundOpacity={0.06}
+      backgroundPosition="center"
+    >
       <SectionHeading
         align="left"
         tag="Core Values"
