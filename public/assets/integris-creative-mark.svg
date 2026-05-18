@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Integris Creative mark light</title>
+  <desc id="desc">Blue crescent C mark on a white background.</desc>
+  <defs>
+    <linearGradient id="outerBlue" x1="78" y1="72" x2="377" y2="472" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#A9CBF5"/>
+      <stop offset="0.36" stop-color="#4F79B5"/>
+      <stop offset="1" stop-color="#10264E"/>
+    </linearGradient>
+    <linearGradient id="innerBlue" x1="196" y1="74" x2="435" y2="397" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F4FAFF"/>
+      <stop offset="0.48" stop-color="#9BB7D8"/>
+      <stop offset="1" stop-color="#51739D"/>
+    </linearGradient>
+    <linearGradient id="rim" x1="82" y1="64" x2="360" y2="492" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#D9ECFF"/>
+      <stop offset="0.2" stop-color="#6A8DBC"/>
+      <stop offset="0.62" stop-color="#1E3E72"/>
+      <stop offset="1" stop-color="#071A3A"/>
+    </linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="14" stdDeviation="16" flood-color="#0B1730" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+  <rect width="512" height="512" fill="#FFFFFF"/>
+  <g filter="url(#softShadow)">
+    <path d="M224 20C103 63 26 172 37 295c11 124 111 209 244 218-101-35-164-113-166-212C112 180 157 88 224 20Z" fill="url(#rim)"/>
+    <path d="M433 72C365 26 273 21 197 60c-83 42-135 127-136 217 0 101 58 187 148 225-67-47-107-118-107-203 0-83 42-158 108-201 65-43 148-47 214-12l9-14Z" fill="url(#outerBlue)" opacity="0.96"/>
+    <path d="M425 91C362 61 286 64 227 102c-63 40-101 107-101 182 0 79 42 148 106 186-42-41-65-95-65-154 0-68 34-130 90-166 52-34 118-41 176-19l-8-40Z" fill="#FFFFFF"/>
+    <path d="M421 82C346 58 262 71 198 124c-43 36-72 85-84 138 45-69 116-111 208-127 33-6 67-7 101-2l-2-51Z" fill="url(#innerBlue)"/>
+    <path d="M431 156H313c-64 0-116 52-116 116s52 116 116 116h118v-58H313c-32 0-58-26-58-58s26-58 58-58h118v-58Z" fill="url(#innerBlue)"/>
+    <path d="M206 270c-8 67 27 130 88 164-83-19-142-80-151-157 19 9 40 7 63-7Z" fill="#FFFFFF"/>
+  </g>
+</svg>
